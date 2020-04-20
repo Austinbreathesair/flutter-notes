@@ -2,7 +2,7 @@
 
 This is a mobile app that lets you create, save and share notes. This is for both Android & IOS.
 
-![UI_Screen](assets/screenshot.png)
+![](lib/assets/screenshot.png)
 
 ## Getting Started
 
