@@ -2,6 +2,8 @@
 
 This is a mobile app that lets you create, save and share notes. This is for both Android & IOS.
 
+![UI_Screen](assets/screenshot.png)
+
 ## Getting Started
 
 To get started using this application, all you need to do is simply clone this repository.
