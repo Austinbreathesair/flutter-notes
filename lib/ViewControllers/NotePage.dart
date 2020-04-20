@@ -31,7 +31,7 @@ class _NotePageState extends State<NotePage> {
 
   Timer _persistanceTimer;
 
-  final GlobalKey<ScaffoldState> _globalKey = new Globalkey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _globalKey = new GlobalKey<ScaffoldState>();
 
   @override 
   void initState() {
@@ -191,8 +191,8 @@ void bottomSheet(BuildContext context) {
     context: context,
     builder: (BuildContext ctx) {
       return MoreOptionsSheet(
-        color: note_colour,
-        callbackColorTapped: _changeColor,
+        colour: note_colour,
+        callBackColourTapped: _changeColour,
         callBackOptionTapped: bottomSheetOptionTappedHandler,
         date_last_edited: _editableNote.date_last_edited,
       );
@@ -239,7 +239,7 @@ void updateNoteObject() {
           }
 }
 
-void bottomSheetOptionTappedHandler(moreOptions, tappedOption) {
+void bottomSheetOptionTappedHandler(moreOptions tappedOption) {
   print("option tapped: $tappedOption");
   switch (tappedOption) {
     case moreOptions.delete:
@@ -347,6 +347,12 @@ void _archivePopup(BuildContext context) {
 }
 
 void _exitWithoutSaving(BuildContext context) {
+  _persistanceTimer.cancel();
+  CentralStation.updateNeeded = false;
+  Navigator.of(context).pop();
+}
+
+void _archiveThisNote(BuildContext context) {
   Navigator.of(context).pop();
   // set flag to true and send entire obj to db to update
   _editableNote.is_archived = 1;

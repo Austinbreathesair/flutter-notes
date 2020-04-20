@@ -17,7 +17,7 @@ class StaggeredGridPage extends StatefulWidget {
 class _StaggeredGridPageState extends State<StaggeredGridPage> {
 
   var noteDB = NotesDBHandler();
-  List<Map<String,dynamic>>> _allNotesInQueryResult = [];
+  List<Map<String,dynamic>> _allNotesInQueryResult = [];
   viewType notesViewType ;
 
   @override 
