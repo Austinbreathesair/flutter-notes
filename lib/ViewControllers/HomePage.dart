@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _newNoteTapped(BuildContext context) {
+  void _newNoteTapped(BuildContext ctx) {
     var emptyNote = new Note(-1, "", "", "", DateTime.now(), DateTime.now(), Colors.white);
     Navigator.push(ctx,MaterialPageRoute(builder: (ctx) => NotePage(emptyNote)));
   }
